@@ -1,10 +1,8 @@
-import "./App.css";
-import Map from "./Components/Map/Map";
+import { Map } from "./components/Map";
 
 function App() {
   return (
     <div className="App">
-      Safeguardian
       <Map />
     </div>
   );
