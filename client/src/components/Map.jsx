@@ -3,12 +3,19 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
+import axios from "axios"
+
 
 export function Map() {
-  // Berlin coordinates
-  const position = [48.42, -123.36];
+  const position = [49.2827, -123.1207];
 
-  // --- (6) Create a custom marker ---
+   axios.get(`https://opendata.vancouver.ca/api/records/1.0/search/?dataset=homeless-shelter-locations&q=&lang=en&rows=80&facet=facility&facet=category&facet=meals&facet=pets&facet=carts&facet=geo_local_area`)
+   .then((res => {
+    const shelters = res.data.records
+    console.log('shelters:', shelters)
+   }))
+
+
   const customIcon = new Icon({
     iconUrl: icon,
     iconSize: [20, 30],
@@ -19,21 +26,16 @@ export function Map() {
   return (
     <section className="map-component">
       <div className="map">
-        <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+        <MapContainer center={position} zoom={14.5} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a 
             href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            // --- (7) Alternative map style (attribution and url copied from the leaflet extras website) ---
-            // attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-            // url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-            // --- -------------------------------------------------------------------------------------- ---
           />
           <Marker position={position} icon={customIcon}>
             <Popup>test</Popup>
           </Marker>
         </MapContainer>
-        {/* --- ---------------------------- --- */}
       </div>
     </section>
   );
