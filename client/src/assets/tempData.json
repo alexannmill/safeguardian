@@ -1,0 +1,454 @@
+{
+  "nhits": 18,
+  "parameters": {
+    "dataset": "homeless-shelter-locations",
+    "rows": 10,
+    "start": 0,
+    "facet": [
+      "facility",
+      "category",
+      "meals",
+      "pets",
+      "carts",
+      "geo_local_area"
+    ],
+    "format": "json",
+    "timezone": "UTC"
+  },
+  "records": [
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "6c641a7b2d5e582b306606f4c24a0bfbab488f95",
+      "fields": {
+        "meals": "no",
+        "geo_local_area": "Downtown",
+        "facility": "The Haven",
+        "geom": {
+          "coordinates": [
+            -123.10109474719326,
+            49.282056211986955
+          ],
+          "type": "Point"
+        },
+        "category": "Men",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-646-6800"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "6bb31f21fec5ca0b1fee1133518398bdc5f7d696",
+      "fields": {
+        "meals": "no",
+        "geo_local_area": "Downtown",
+        "facility": "Catholic Charities Men's Hostel",
+        "geom": {
+          "coordinates": [
+            -123.1147756731615,
+            49.27769337237721
+          ],
+          "type": "Point"
+        },
+        "category": "Men",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-443-3292"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "3dc1d98f838bd8410563344e4442bf1d2dbdeb4e",
+      "fields": {
+        "meals": "yes",
+        "geo_local_area": "Strathcona",
+        "facility": "First United Church",
+        "geom": {
+          "coordinates": [
+            -123.09706180207304,
+            49.280974006004946
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "yes",
+        "pets": "yes",
+        "phone": "604-681-8365"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "75a9cc779a634b9f69e9c32a3db254650957982e",
+      "fields": {
+        "meals": "yes",
+        "geo_local_area": "Downtown",
+        "facility": "Dusk to Dawn-Directions Youth Centre",
+        "geom": {
+          "coordinates": [
+            -123.12779292707766,
+            49.279567168411575
+          ],
+          "type": "Point"
+        },
+        "category": "Youth (all genders)",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-633-1472"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "43e53464df332845e492ff0a8b2f57b2df5fc658",
+      "fields": {
+        "meals": "yes",
+        "geo_local_area": "Mount Pleasant",
+        "facility": "Tenth Avenue Church",
+        "geom": {
+          "coordinates": [
+            -123.10586046207774,
+            49.262338305195684
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-876-2181"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "f7030ee3f74239ce9d82997a2ec7dccee3923af4",
+      "fields": {
+        "meals": "no",
+        "geo_local_area": "Mount Pleasant",
+        "facility": "Yukon Shelter",
+        "geom": {
+          "coordinates": [
+            -123.11236726193974,
+            49.26689088504469
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "no",
+        "pets": "yes",
+        "phone": "604-264-1680"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "0d11956397ad943639c76bce2aedcfe264f477b1",
+      "fields": {
+        "meals": "no",
+        "geo_local_area": "Downtown",
+        "facility": "Crosswalk",
+        "geom": {
+          "coordinates": [
+            -123.10767247883172,
+            49.28180507947213
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-669-4349"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "5cd80f9ca7794cd0845eb451355a81c74feeedc3",
+      "fields": {
+        "meals": "yes",
+        "geo_local_area": "West End",
+        "facility": "First Baptist Church",
+        "geom": {
+          "coordinates": [
+            -123.12645824751823,
+            49.281851154764425
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-683-8441"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "3f980b760ef75618b69158fd86a53e86e8886187",
+      "fields": {
+        "meals": "yes",
+        "geo_local_area": "Downtown",
+        "facility": "Anchor of Hope",
+        "geom": {
+          "coordinates": [
+            -123.10109474719326,
+            49.282056211986955
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-646-6899"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    },
+    {
+      "datasetid": "homeless-shelter-locations",
+      "recordid": "69859ab824590f9c8bed89ee7d833c074350dffb",
+      "fields": {
+        "meals": "no",
+        "geo_local_area": "Downtown",
+        "facility": "Belkin House",
+        "geom": {
+          "coordinates": [
+            -123.11293968534518,
+            49.28245838143064
+          ],
+          "type": "Point"
+        },
+        "category": "Adults (all genders)",
+        "carts": "no",
+        "pets": "no",
+        "phone": "604-681-3405"
+      },
+      "record_timestamp": "2022-11-21T13:22:55.697Z"
+    }
+  ],
+  "facet_groups": [
+    {
+      "name": "facility",
+      "facets": [
+        {
+          "name": "Aboriginal Shelter",
+          "count": 1,
+          "state": "displayed",
+          "path": "Aboriginal Shelter"
+        },
+        {
+          "name": "Anchor of Hope",
+          "count": 1,
+          "state": "displayed",
+          "path": "Anchor of Hope"
+        },
+        {
+          "name": "Belkin House",
+          "count": 1,
+          "state": "displayed",
+          "path": "Belkin House"
+        },
+        {
+          "name": "Catholic Charities Men's Hostel",
+          "count": 1,
+          "state": "displayed",
+          "path": "Catholic Charities Men's Hostel"
+        },
+        {
+          "name": "Crosswalk",
+          "count": 1,
+          "state": "displayed",
+          "path": "Crosswalk"
+        },
+        {
+          "name": "Dusk to Dawn-Directions Youth Centre",
+          "count": 1,
+          "state": "displayed",
+          "path": "Dusk to Dawn-Directions Youth Centre"
+        },
+        {
+          "name": "First Baptist Church",
+          "count": 1,
+          "state": "displayed",
+          "path": "First Baptist Church"
+        },
+        {
+          "name": "First United Church",
+          "count": 1,
+          "state": "displayed",
+          "path": "First United Church"
+        },
+        {
+          "name": "Grandview Calvary Baptist Church",
+          "count": 1,
+          "state": "displayed",
+          "path": "Grandview Calvary Baptist Church"
+        },
+        {
+          "name": "Lookout Downtown",
+          "count": 1,
+          "state": "displayed",
+          "path": "Lookout Downtown"
+        },
+        {
+          "name": "New Fountain",
+          "count": 1,
+          "state": "displayed",
+          "path": "New Fountain"
+        },
+        {
+          "name": "Tenth Avenue Church",
+          "count": 1,
+          "state": "displayed",
+          "path": "Tenth Avenue Church"
+        },
+        {
+          "name": "The Beacon",
+          "count": 1,
+          "state": "displayed",
+          "path": "The Beacon"
+        },
+        {
+          "name": "The Haven",
+          "count": 1,
+          "state": "displayed",
+          "path": "The Haven"
+        },
+        {
+          "name": "Triage",
+          "count": 1,
+          "state": "displayed",
+          "path": "Triage"
+        },
+        {
+          "name": "Union Gospel Mission",
+          "count": 1,
+          "state": "displayed",
+          "path": "Union Gospel Mission"
+        },
+        {
+          "name": "Vineyard Church",
+          "count": 1,
+          "state": "displayed",
+          "path": "Vineyard Church"
+        },
+        {
+          "name": "Yukon Shelter",
+          "count": 1,
+          "state": "displayed",
+          "path": "Yukon Shelter"
+        }
+      ]
+    },
+    {
+      "name": "category",
+      "facets": [
+        {
+          "name": "Adults (all genders)",
+          "count": 13,
+          "state": "displayed",
+          "path": "Adults (all genders)"
+        },
+        {
+          "name": "Men",
+          "count": 4,
+          "state": "displayed",
+          "path": "Men"
+        },
+        {
+          "name": "Youth (all genders)",
+          "count": 1,
+          "state": "displayed",
+          "path": "Youth (all genders)"
+        }
+      ]
+    },
+    {
+      "name": "meals",
+      "facets": [
+        {
+          "name": "yes",
+          "count": 10,
+          "state": "displayed",
+          "path": "yes"
+        },
+        {
+          "name": "no",
+          "count": 8,
+          "state": "displayed",
+          "path": "no"
+        }
+      ]
+    },
+    {
+      "name": "pets",
+      "facets": [
+        {
+          "name": "no",
+          "count": 13,
+          "state": "displayed",
+          "path": "no"
+        },
+        {
+          "name": "yes",
+          "count": 5,
+          "state": "displayed",
+          "path": "yes"
+        }
+      ]
+    },
+    {
+      "name": "carts",
+      "facets": [
+        {
+          "name": "no",
+          "count": 15,
+          "state": "displayed",
+          "path": "no"
+        },
+        {
+          "name": "yes",
+          "count": 3,
+          "state": "displayed",
+          "path": "yes"
+        }
+      ]
+    },
+    {
+      "name": "geo_local_area",
+      "facets": [
+        {
+          "name": "Downtown",
+          "count": 8,
+          "state": "displayed",
+          "path": "Downtown"
+        },
+        {
+          "name": "Strathcona",
+          "count": 5,
+          "state": "displayed",
+          "path": "Strathcona"
+        },
+        {
+          "name": "Grandview-Woodland",
+          "count": 2,
+          "state": "displayed",
+          "path": "Grandview-Woodland"
+        },
+        {
+          "name": "Mount Pleasant",
+          "count": 2,
+          "state": "displayed",
+          "path": "Mount Pleasant"
+        },
+        {
+          "name": "West End",
+          "count": 1,
+          "state": "displayed",
+          "path": "West End"
+        }
+      ]
+    }
+  ]
+}
