@@ -10,6 +10,7 @@ import records from "../assets/tempData.json"
 export default function Markers(props) {
 
   // const [resources, setResources] = useState(null)
+  const [clickedResource, setClickedResource] = useState(null)
   // //props location
   // //set location
 
@@ -22,7 +23,7 @@ export default function Markers(props) {
   //       setResources(incomingData);
   //     }))
   // },[])
-console.log('recordes:', records)
+
 const customIcon = new Icon({
   iconUrl: icon,
   iconSize: [20, 30],
@@ -30,7 +31,8 @@ const customIcon = new Icon({
   // popupAnchor: [-0, -76]
 });
 
-    const renderMarkers = (records.records).map((resource) => {
+// Map each with resource data (pun intended)
+  const renderMarkers = (records.records).map((resource) => {
     return (
     <Marker 
     key={resource.recordid}
@@ -39,19 +41,29 @@ const customIcon = new Icon({
       resource.fields.geom.coordinates[0]
     ]} 
     icon={customIcon}
-
+    onClick ={(() => {
+      setClickedResource(resource)
+    })}
     />
     )
   })
 
 
-  // return props.position === null ? null : (
-  //   {renderMarkers}
-  // );
-
   return(
     <div>
       {renderMarkers}
+     {clickedResource &&
+        <Popup
+        position={[
+          clickedResource.fields.geom.coordinates[1],
+          clickedResource.fields.geom.coordinates[0]
+        ]}
+        onClose={setClickedResource(null)}
+        >
+          <h2>{clickedResource.fields.faciliy}</h2>
+
+        </Popup>
+      }
     </div>
   )
 }

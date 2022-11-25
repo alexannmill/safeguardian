@@ -12,15 +12,15 @@ export default function Map() {
 
   const [resources, setResources] = useState(null)
 
-  useEffect(() => {
-    axios
-    .get(`https://opendata.vancouver.ca/api/records/1.0/search/?dataset=homeless-shelter-locations&q=&lang=en&rows=80&facet=facility&facet=category&facet=meals&facet=pets&facet=carts&facet=geo_local_area`)
-      .then((res => {
-        const incomingData = res.data.records;
-        console.log('incomingData:', incomingData);
-        setResources(incomingData);
-      }))
-  },[])
+  // useEffect(() => {
+  //   axios
+  //   .get(`https://opendata.vancouver.ca/api/records/1.0/search/?dataset=homeless-shelter-locations&q=&lang=en&rows=80&facet=facility&facet=category&facet=meals&facet=pets&facet=carts&facet=geo_local_area`)
+  //     .then((res => {
+  //       const incomingData = res.data.records;
+  //       console.log('incomingData:', incomingData);
+  //       setResources(incomingData);
+  //     }))
+  // },[])
 
 
   return (
