@@ -1,5 +1,5 @@
 // --- (1), (2) & (3): install and import ---
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import Markers from "./Markers";
@@ -11,7 +11,7 @@ export default function Map() {
   const position = [49.2827, -123.1207];
 
   const [resources, setResources] = useState(null)
-
+  const [clickedResource, setClickedResource] = useState(null)
   // useEffect(() => {
   //   axios
   //   .get(`https://opendata.vancouver.ca/api/records/1.0/search/?dataset=homeless-shelter-locations&q=&lang=en&rows=80&facet=facility&facet=category&facet=meals&facet=pets&facet=carts&facet=geo_local_area`)
@@ -35,7 +35,7 @@ export default function Map() {
             href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Markers key={position} position={position} resources={resources}/>
+          <Markers key={position} position={position} resources={resources} onClick={setClickedResource} clickedResource={clickedResource}/>
         </MapContainer>
     </section>
   );
