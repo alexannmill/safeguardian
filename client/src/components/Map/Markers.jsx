@@ -2,16 +2,18 @@ import { Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import records from "../../assets/tempData.json";
 import { HereIcon } from "./HerePin";
 import { singleResourceContext } from "../../Context/SingleResource";
+import axios from "axios";
 
 // ---- props: position, resources
 export default function Markers(props) {
   const { singleResource, setSingleResource } = useContext(
     singleResourceContext
   );
+
   // const popup = useRef(null) -------for bug
 
   const customIcon = new Icon({
@@ -22,7 +24,7 @@ export default function Markers(props) {
   });
 
   // ---- Map each with resource data (pun intended)
-  const renderMarkers = props.resources.records.map((resource) => {
+  const renderMarkers = props.resources.map((resource) => {
     return (
       <Marker
         key={resource.recordid}

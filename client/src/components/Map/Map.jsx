@@ -18,7 +18,9 @@ export default function Map() {
             href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Markers key={position} position={position} resources={resources} />
+        {resources && (
+          <Markers key={position} position={position} resources={resources} />
+        )}
       </MapContainer>
     </section>
   );
