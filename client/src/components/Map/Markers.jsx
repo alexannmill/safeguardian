@@ -1,69 +1,65 @@
-import { Marker, Popup} from "react-leaflet";
-import { Icon, } from "leaflet";
+import { Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
-import { useState } from "react"
-import records from "../../assets/tempData.json"
+import { useContext, useRef } from "react";
+import records from "../../assets/tempData.json";
 import { HereIcon } from "./HerePin";
+import { singleResourceContext } from "../../Context/SingleResource";
 
+// ---- props: position, resources
 export default function Markers(props) {
+  const { singleResource, setSingleResource } = useContext(
+    singleResourceContext
+  );
+  // const popup = useRef(null) -------for bug
 
-  const [clickedResource, setClickedResource] = useState(null)
+  const customIcon = new Icon({
+    iconUrl: icon,
+    iconSize: [20, 30],
+    iconAnchor: [1, 1],
+    popupAnchor: [-0, -76],
+  });
 
-  const handleClick = (e, resource) => {
-    e.preventDefault()
-    setClickedResource(resource)
-  }
-
-const customIcon = new Icon({
-  iconUrl: icon,
-  iconSize: [20, 30],
-  iconAnchor: [1, 1],
-  popupAnchor: [-0, -76]
-});
-
-// Map each with resource data (pun intended)
-  const renderMarkers = (records.records).map((resource) => {
+  // ---- Map each with resource data (pun intended)
+  const renderMarkers = props.resources.records.map((resource) => {
     return (
-        <Marker 
-          key={resource.recordid}
-          position={[
-            resource.fields.geom.coordinates[1],
-            resource.fields.geom.coordinates[0]
-          ]} 
-          icon={customIcon}
-          onClick={(e) => {
-            handleClick(e, resource)
-          }}
-        />
-    )
-  })
-
-  return(
-    <div>
-        <Marker 
-          key={"youAreHere"} 
-          position={props.position}
-          icon={HereIcon}
-        />
-      {renderMarkers}
-     {clickedResource &&
-        <Popup
+      <Marker
+        key={resource.recordid}
         position={[
-          clickedResource.fields.geom.coordinates[1],
-          clickedResource.fields.geom.coordinates[0]
+          resource.fields.geom.coordinates[1],
+          resource.fields.geom.coordinates[0],
         ]}
-        onClose={setClickedResource(null)}
-        >
-          <h2>Facility: {clickedResource.fields.facility}</h2>
-          <h2>Category: {clickedResource.fields.category}</h2>
-          <h2>Carts Allowed: {clickedResource.fields.carts}</h2>
-          <h2>Pets Allowed: {clickedResource.fields.pets}</h2>
-          <h2>Meals Allowed: {clickedResource.fields.meals}</h2>
-          <h2>Phone: {clickedResource.fields.phone}</h2>
-        </Popup>
-      }
-    </div>
-  )
-}
+        icon={customIcon}
+        eventHandlers={{
+          click: () => {
+            setSingleResource(resource);
+          },
+        }}
+      />
+    );
+  });
 
+  return (
+    <div>
+      <Marker key={"youAreHere"} position={props.position} icon={HereIcon} />
+      {renderMarkers}
+      {singleResource && (
+        <Popup
+          position={[
+            singleResource.fields.geom.coordinates[1],
+            singleResource.fields.geom.coordinates[0],
+          ]}
+          // ref={popup} ---- for bug
+        >
+          <h6>Facility: {singleResource.fields.facility}</h6>
+          <h6>Category: {singleResource.fields.category}</h6>
+          <h6>Carts Allowed: {singleResource.fields.carts}</h6>
+          <h6>Pets Allowed: {singleResource.fields.pets}</h6>
+          <h6>Meals Allowed: {singleResource.fields.meals}</h6>
+          <h6>Phone: {singleResource.fields.phone}</h6>
+        </Popup>
+      )}
+    </div>
+  );
+}
