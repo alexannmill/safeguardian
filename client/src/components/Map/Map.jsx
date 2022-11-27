@@ -8,7 +8,7 @@ import { resourcesContext } from "../../Context/Resources";
 export default function Map() {
   const position = [49.2827, -123.1207];
 
-  const { resources, setResources } = useContext(resourcesContext);
+  const { resources } = useContext(resourcesContext);
 
   return (
     <section className="map-component">
