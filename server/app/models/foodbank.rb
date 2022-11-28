@@ -1,0 +1,2 @@
+class Foodbank < ApplicationRecord
+end
