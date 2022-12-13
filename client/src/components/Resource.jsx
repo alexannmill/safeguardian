@@ -4,6 +4,8 @@ import { resourcesContext } from "../../Context/Resources";
 function Resource() {
   const { setResources } = useContext(resourcesContext);
 
+  const panels = ["Shelters", "Foodbank"];
+
   return (
     <div
       className="Resource"
