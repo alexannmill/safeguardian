@@ -14,6 +14,7 @@ export default function Markers(props) {
     singleResourceContext
   );
 
+  console.log("props:", props);
   // const popup = useRef(null) -------for bug
 
   const customIcon = new Icon({
