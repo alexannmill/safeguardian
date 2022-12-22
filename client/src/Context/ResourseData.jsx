@@ -11,9 +11,9 @@ export default function ResourceDataProvider(props) {
 
   useEffect(() => {
     axios
-      .get(`https://localhost:5001/shelters`)
+      .get(`http://localhost:5001/shelters/all`)
       .then((res) => {
-        const incomingData = res.data.records;
+        const incomingData = res.data;
         console.log("incomingData:", incomingData);
         setResourceData(incomingData);
       })

@@ -2,19 +2,19 @@ import { Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
-import { useContext, useEffect, useRef, useState } from "react";
-import records from "../../assets/tempData.json";
-import { HereIcon } from "./HerePin";
+import { useContext } from "react";
 import { singleResourceContext } from "../../Context/SingleResource";
-import axios from "axios";
+import { resourceDataContext } from "../../Context/ResourseData";
 
-// ---- props: position, resources
+// ---- props: position
 export default function Markers(props) {
   const { singleResource, setSingleResource } = useContext(
     singleResourceContext
   );
+  const { resourceData } = useContext(resourceDataContext);
 
   console.log("props:", props);
+  console.log("resources:", resourceData);
   // const popup = useRef(null) -------for bug
 
   const customIcon = new Icon({
@@ -25,14 +25,12 @@ export default function Markers(props) {
   });
 
   // ---- Map each with resource data (pun intended)
-  const renderMarkers = props.resources.map((resource) => {
+  const renderMarkers = resourceData.map((resource) => {
+    console.log("resourceredner:", resource);
     return (
       <Marker
-        key={resource.recordid}
-        position={[
-          resource.fields.geom.coordinates[1],
-          resource.fields.geom.coordinates[0],
-        ]}
+        key={resourceData.id}
+        position={[Number(resourceData.lat), Number(resourceData.long)]}
         icon={customIcon}
         eventHandlers={{
           click: () => {
@@ -45,7 +43,6 @@ export default function Markers(props) {
 
   return (
     <div>
-      <Marker key={"youAreHere"} position={props.position} icon={HereIcon} />
       {renderMarkers}
       {singleResource && (
         <Popup

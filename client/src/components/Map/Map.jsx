@@ -1,6 +1,7 @@
 // --- (1), (2) & (3): install and import ---
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { HereIcon } from "./HerePin";
 import Markers from "./Markers";
 import { useContext } from "react";
 import { resourceContext } from "../../Context/Resource";
@@ -22,6 +23,7 @@ export default function Map() {
             href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <Marker key={"youAreHere"} position={position} icon={HereIcon} />
         {resource && (
           <Markers
             key={position}
