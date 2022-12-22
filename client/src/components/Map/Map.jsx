@@ -14,7 +14,6 @@ export default function Map() {
   const { resource } = useContext(resourceContext);
   const { resourceData } = useContext(resourceDataContext);
 
-  console.log("resource:", resource);
   return (
     <section className="map-component">
       <MapContainer center={position} zoom={15} scrollWheelZoom={false}>

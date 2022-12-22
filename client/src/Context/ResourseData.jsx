@@ -22,6 +22,7 @@ export default function ResourceDataProvider(props) {
 
   const data = { resourceData, setResourceData };
 
+
   return (
     <resourceDataContext.Provider value={data}>
       {props.children}

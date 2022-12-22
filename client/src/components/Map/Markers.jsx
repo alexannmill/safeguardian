@@ -14,7 +14,7 @@ export default function Markers(props) {
   const { resourceData } = useContext(resourceDataContext);
 
   console.log("props:", props);
-  console.log("resources:", resourceData);
+  console.log("resourcesMARKERS:", resourceData);
   // const popup = useRef(null) -------for bug
 
   const customIcon = new Icon({
@@ -27,10 +27,12 @@ export default function Markers(props) {
   // ---- Map each with resource data (pun intended)
   const renderMarkers = resourceData.map((resource) => {
     console.log("resourceredner:", resource);
+    console.log("resourceData.lat:", resource.lat);
+
     return (
       <Marker
         key={resourceData.id}
-        position={[Number(resourceData.lat), Number(resourceData.long)]}
+        position={[Number(resource.lat), Number(resource.long)]}
         icon={customIcon}
         eventHandlers={{
           click: () => {
