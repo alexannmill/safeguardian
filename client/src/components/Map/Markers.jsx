@@ -8,7 +8,7 @@ import { resourceContext } from "../../Context/Resource";
 
 // ---- props: position
 export default function Markers(props) {
-  const { Resource, setResource } = useContext(resourceContext);
+  const { resource, setResource } = useContext(resourceContext);
   const { resourceData } = useContext(resourceDataContext);
 
   console.log("props:", props);
@@ -44,20 +44,20 @@ export default function Markers(props) {
   return (
     <div>
       {renderMarkers}
-      {Resource && (
+      {resource && (
         <Popup
           position={[
-            Resource.fields.geom.coordinates[1],
-            Resource.fields.geom.coordinates[0],
+            resource.fields.geom.coordinates[1],
+            resource.fields.geom.coordinates[0],
           ]}
           // ref={popup} ---- for bug
         >
-          <h6>Facility: {Resource.fields.facility}</h6>
-          <h6>Category: {Resource.fields.category}</h6>
-          <h6>Carts Allowed: {Resource.fields.carts}</h6>
-          <h6>Pets Allowed: {Resource.fields.pets}</h6>
-          <h6>Meals Allowed: {Resource.fields.meals}</h6>
-          <h6>Phone: {Resource.fields.phone}</h6>
+          <h6>Facility: {resource.fields.facility}</h6>
+          <h6>Category: {resource.fields.category}</h6>
+          <h6>Carts Allowed: {resource.fields.carts}</h6>
+          <h6>Pets Allowed: {resource.fields.pets}</h6>
+          <h6>Meals Allowed: {resource.fields.meals}</h6>
+          <h6>Phone: {resource.fields.phone}</h6>
         </Popup>
       )}
     </div>

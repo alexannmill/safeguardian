@@ -4,14 +4,12 @@ import "leaflet/dist/leaflet.css";
 import { HereIcon } from "./HerePin";
 import Markers from "./Markers";
 import { useContext } from "react";
-import { resourceContext } from "../../Context/Resource";
 import { resourceDataContext } from "../../Context/ResourseData";
 
 export default function Map() {
   // --- set to dt Victora
   const position = [48.4284, -123.3657];
 
-  const { resource } = useContext(resourceContext);
   const { resourceData } = useContext(resourceDataContext);
 
   return (
@@ -23,13 +21,7 @@ export default function Map() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker key={"youAreHere"} position={position} icon={HereIcon} />
-        {resource && (
-          <Markers
-            key={position}
-            position={position}
-            resources={resourceData}
-          />
-        )}
+        {resourceData && <Markers key={position} position={position} />}
       </MapContainer>
     </section>
   );
