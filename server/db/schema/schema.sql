@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS shelters CASCADE;
 CREATE TABLE "shelters" (
   id SERIAL PRIMARY KEY NOT NULL,
   facility VARCHAR(100),
+  category VARCHAR(100),
   lat NUMERIC(6,4),
   long NUMERIC(7,4),
   street_number INTEGER,

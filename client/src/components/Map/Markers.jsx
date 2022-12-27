@@ -13,7 +13,7 @@ export default function Markers(props) {
 
   console.log("props:", props);
   console.log("resourcesMARKERS:", resourceData);
-  // const popup = useRef(null) -------for bug
+  console.log("resource:", resource);
 
   const customIcon = new Icon({
     iconUrl: icon,
@@ -25,7 +25,6 @@ export default function Markers(props) {
   // ---- Map each with resource data (pun intended)
   const renderMarkers = resourceData.map((resource) => {
     console.log("resourceredner:", resource);
-    console.log("resourceData.lat:", resource.lat);
 
     return (
       <Marker
@@ -45,19 +44,13 @@ export default function Markers(props) {
     <div>
       {renderMarkers}
       {resource && (
-        <Popup
-          position={[
-            resource.fields.geom.coordinates[1],
-            resource.fields.geom.coordinates[0],
-          ]}
-          // ref={popup} ---- for bug
-        >
-          <h6>Facility: {resource.fields.facility}</h6>
-          <h6>Category: {resource.fields.category}</h6>
-          <h6>Carts Allowed: {resource.fields.carts}</h6>
-          <h6>Pets Allowed: {resource.fields.pets}</h6>
-          <h6>Meals Allowed: {resource.fields.meals}</h6>
-          <h6>Phone: {resource.fields.phone}</h6>
+        <Popup position={[Number(resource.lat), Number(resource.long)]}>
+          <h6>Facility: {resource.facility}</h6>
+          <h6>Category: {resource.category}</h6>
+          <h6>Carts Allowed: {resource.carts ? "Yes" : "No"}</h6>
+          <h6>Pets Allowed: {resource.pets ? "Yes" : "No"}</h6>
+          <h6>Meals Allowed: {resource.meals ? "Yes" : "No"}</h6>
+          <h6>Phone: {resource.phone}</h6>
         </Popup>
       )}
     </div>
