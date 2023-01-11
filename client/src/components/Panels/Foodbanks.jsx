@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { resourceDataContext } from "../../Context/ResourseData";
 
-export default function Foodbanks(props) {
+export default function Foodbanks() {
   const { setResourceData } = useContext(resourceDataContext);
   const [click, setClick] = useState(null);
 
@@ -11,6 +11,7 @@ export default function Foodbanks(props) {
   };
 
   useEffect(() => {
+    console.log("hit");
     axios
       .get(`http://localhost:5001/foodbanks/all`)
       .then((res) => {

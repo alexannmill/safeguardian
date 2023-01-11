@@ -14,3 +14,8 @@ const allFoodbanks = () => {
       return result;
     });
 };
+
+
+module.exports = {
+  allFoodbanks,
+};
