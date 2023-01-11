@@ -10,16 +10,16 @@ export default function Shelters(props) {
     setClick(true);
   };
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5001/shelters/all`)
-      .then((res) => {
-        const incomingData = res.data;
-        console.log("incomingData:", incomingData);
-        setResourceData(incomingData);
-      })
-      .catch((err) => console.log(err));
-  }, [click]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5001/shelters/all`)
+  //     .then((res) => {
+  //       const incomingData = res.data;
+  //       console.log("incomingData:", incomingData);
+  //       setResourceData(incomingData);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [click]);
 
   return (
     <div className="shelters-panel">
