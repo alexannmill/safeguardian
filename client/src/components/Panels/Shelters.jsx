@@ -19,7 +19,7 @@ export default function Shelters() {
       .get(`http://localhost:5001/shelters/all`)
       .then((res) => {
         const incomingData = res.data;
-        console.log("incomingData:", incomingData);
+        console.log("incomingDataSH:", incomingData);
         setResourceData(incomingData);
       })
       .catch((err) => console.log(err));

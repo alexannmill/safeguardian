@@ -1,11 +1,13 @@
 import Foodbanks from "./Panels/Foodbanks";
+import SafeInjections from "./Panels/SafeInjections";
 import Shelters from "./Panels/Shelters";
 
 function Panels() {
   return (
     <div className="panel-list">
-      <Shelters />
+      {/* <Shelters />
       <Foodbanks />
+      <SafeInjections /> */}
     </div>
   );
 }
