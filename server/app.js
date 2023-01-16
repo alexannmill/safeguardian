@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 5001;
+const port = 3011;
 const logger = require("morgan");
 
 // ---- Middleware
@@ -12,7 +12,6 @@ app.use(logger("dev"));
 const sheltersRouter = require("./routes/shelters");
 const foodbanksRouter = require("./routes/foodbanks");
 const safeinjectionsRouter = require("./routes/safeinjections");
-const morgan = require("morgan");
 
 
 // ---- Redirection
