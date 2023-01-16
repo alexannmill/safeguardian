@@ -7,17 +7,18 @@ const {
   sheltersPets,
 } = require("../db/queries/shelters.js");
 
-router.get("/", (req, res) => res.send("Hello shelters!"));
+router.get("/", (req, res) => res.status(200).send("Hello shelters!"));
 
 router.get("/all", (req, res) => {
   allShelters().then((shelters) => {
-    res.send(shelters);
+    console.log("shelters:", shelters);
+    res.status(200).send(shelters);
   });
 });
 
 router.get("/pets", (req, res) => {
   sheltersPets().then((shelters) => {
-    res.send(shelters);
+    res.status(200).send(shelters);
   });
 });
 

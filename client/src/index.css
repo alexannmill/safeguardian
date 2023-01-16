@@ -43,13 +43,14 @@
       border-radius: 5px;
 }
 
-/* --- (4) Leaflet container with map dimensions (other properties optional) --- */
 .leaflet-container {
   width: 60vw;
-    height: 100vh;
+  height: 100vh;
   border-radius: 5px;
 }
 
-.leaflet-control-attribution {
-  font-size: 10px;
+.App {
+  display: flex;
+  flex-direction: row;
 }
+

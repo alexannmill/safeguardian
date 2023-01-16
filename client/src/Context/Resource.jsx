@@ -5,10 +5,10 @@ export const resourceContext = createContext();
 export default function ResourceProvider(props) {
   const [resource, setResource] = useState(null);
 
-  const resourcesData = { resource, setResource };
+  const data = { resource, setResource };
 
   return (
-    <resourceContext.Provider value={resourcesData}>
+    <resourceContext.Provider value={data}>
       {props.children}
     </resourceContext.Provider>
   );

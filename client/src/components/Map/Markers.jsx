@@ -2,41 +2,38 @@ import { Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
-import { useContext, useEffect, useRef, useState } from "react";
-import records from "../../assets/tempData.json";
-import { HereIcon } from "./HerePin";
-import { singleResourceContext } from "../../Context/SingleResource";
-import axios from "axios";
+import { useContext } from "react";
+import { resourceDataContext } from "../../Context/ResourseData";
+import { resourceContext } from "../../Context/Resource";
 
-// ---- props: position, resources
+// ---- props: position
 export default function Markers(props) {
-  const { singleResource, setSingleResource } = useContext(
-    singleResourceContext
-  );
+  const { resource, setResource } = useContext(resourceContext);
+  const { resourceData } = useContext(resourceDataContext);
 
   console.log("props:", props);
-  // const popup = useRef(null) -------for bug
+  console.log("resourcesMARKERS:", resourceData);
+  console.log("resource:", resource);
 
   const customIcon = new Icon({
     iconUrl: icon,
-    iconSize: [20, 30],
+    iconSize: [40, 50],
     iconAnchor: [1, 1],
     popupAnchor: [-0, -76],
   });
 
   // ---- Map each with resource data (pun intended)
-  const renderMarkers = props.resources.map((resource) => {
+  const renderMarkers = resourceData.map((resource) => {
+    console.log("resourceredner:", resource);
+
     return (
       <Marker
-        key={resource.recordid}
-        position={[
-          resource.fields.geom.coordinates[1],
-          resource.fields.geom.coordinates[0],
-        ]}
+        key={resourceData.id}
+        position={[Number(resource.lat), Number(resource.long)]}
         icon={customIcon}
         eventHandlers={{
           click: () => {
-            setSingleResource(resource);
+            setResource(resource);
           },
         }}
       />
@@ -45,22 +42,15 @@ export default function Markers(props) {
 
   return (
     <div>
-      <Marker key={"youAreHere"} position={props.position} icon={HereIcon} />
       {renderMarkers}
-      {singleResource && (
-        <Popup
-          position={[
-            singleResource.fields.geom.coordinates[1],
-            singleResource.fields.geom.coordinates[0],
-          ]}
-          // ref={popup} ---- for bug
-        >
-          <h6>Facility: {singleResource.fields.facility}</h6>
-          <h6>Category: {singleResource.fields.category}</h6>
-          <h6>Carts Allowed: {singleResource.fields.carts}</h6>
-          <h6>Pets Allowed: {singleResource.fields.pets}</h6>
-          <h6>Meals Allowed: {singleResource.fields.meals}</h6>
-          <h6>Phone: {singleResource.fields.phone}</h6>
+      {resource && (
+        <Popup position={[Number(resource.lat), Number(resource.long)]}>
+          <h6>Facility: {resource.facility}</h6>
+          <h6>Category: {resource.category}</h6>
+          <h6>Carts Allowed: {resource.carts ? "Yes" : "No"}</h6>
+          <h6>Pets Allowed: {resource.pets ? "Yes" : "No"}</h6>
+          <h6>Meals Allowed: {resource.meals ? "Yes" : "No"}</h6>
+          <h6>Phone: {resource.phone}</h6>
         </Popup>
       )}
     </div>

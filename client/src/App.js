@@ -2,17 +2,16 @@ import Map from "./Components/Map/Map";
 import Panels from "./Components/Panels";
 import ResourceProvider from "./Context/Resource";
 import ResourceDataProvider from "./Context/ResourseData";
-import SingleResourceProvider from "./Context/SingleResource";
+import AllPanels from "./Components/Panels/AllPanels";
 
 function App() {
   return (
     <div className="App">
       <ResourceProvider>
         <ResourceDataProvider>
-          <SingleResourceProvider>
-            <Panels />
-            <Map />
-          </SingleResourceProvider>
+          {/* <Panels /> */}
+          <AllPanels />
+          <Map />
         </ResourceDataProvider>
       </ResourceProvider>
     </div>
