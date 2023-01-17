@@ -5,9 +5,9 @@ import Shelters from "./Panels/Shelters";
 function Panels() {
   return (
     <div className="panel-list">
-      {/* <Shelters />
+      <Shelters />
       <Foodbanks />
-      <SafeInjections /> */}
+      <SafeInjections />
     </div>
   );
 }
