@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <ResourceProvider>
         <ResourceDataProvider>
-          {/* <Panels /> */}
-          <AllPanels />
+          <Panels />
+          {/* <AllPanels /> */}
           <Map />
         </ResourceDataProvider>
       </ResourceProvider>

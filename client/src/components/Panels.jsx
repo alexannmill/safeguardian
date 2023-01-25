@@ -1,6 +1,7 @@
 import Foodbanks from "./Panels/Foodbanks";
 import SafeInjections from "./Panels/SafeInjections";
 import Shelters from "./Panels/Shelters";
+import AllPanels from "./Panels/AllPanels";
 
 function Panels() {
   return (
@@ -8,6 +9,7 @@ function Panels() {
       <Shelters />
       <Foodbanks />
       <SafeInjections />
+      <AllPanels />
     </div>
   );
 }
