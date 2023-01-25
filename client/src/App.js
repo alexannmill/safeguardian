@@ -10,7 +10,6 @@ function App() {
       <ResourceProvider>
         <ResourceDataProvider>
           <Panels />
-          {/* <AllPanels /> */}
           <Map />
         </ResourceDataProvider>
       </ResourceProvider>

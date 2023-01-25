@@ -1,15 +1,12 @@
-import Foodbanks from "./Panels/Foodbanks";
-import SafeInjections from "./Panels/SafeInjections";
-import Shelters from "./Panels/Shelters";
 import AllPanels from "./Panels/AllPanels";
+import CallEmerg from "./Panels/CallEmerg";
+import "./Styles/Panels.css";
 
 function Panels() {
   return (
     <div className="panel-list">
-      <Shelters />
-      <Foodbanks />
-      <SafeInjections />
       <AllPanels />
+      <CallEmerg />
     </div>
   );
 }

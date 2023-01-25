@@ -2,13 +2,21 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { resourceDataContext } from "../../Context/ResourseData";
 import env from "react-dotenv";
+import "../Styles/Panels.css";
 
 export default function AllPanels() {
   const { setResourceData } = useContext(resourceDataContext);
 
   const [click, setClick] = useState(null);
 
-  const panelResources = ["Shelters", "Safe Injection Sites", "Food Banks"];
+  const panelResources = [
+    "Shelters",
+    "Safe Injection Sites",
+    "Food Banks",
+    "Detox Centers",
+    "Allowed Camping Areas",
+    "Hospitals",
+  ];
 
   const handleClick = (panel) => {
     setClick(panel);
