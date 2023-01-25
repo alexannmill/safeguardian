@@ -6,9 +6,9 @@ import AllPanels from "./Panels/AllPanels";
 function Panels() {
   return (
     <div className="panel-list">
-      {/* <Shelters />
+      <Shelters />
       <Foodbanks />
-      <SafeInjections /> */}
+      <SafeInjections />
       <AllPanels />
     </div>
   );

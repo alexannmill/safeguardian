@@ -1,3 +1,9 @@
 .zoom-bar {
   background-color: red;
 }
+
+
+.panel-list {
+  display: flex;
+  flex-direction: row;
+}
