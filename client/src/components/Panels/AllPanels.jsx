@@ -1,26 +1,22 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { resourceDataContext } from "../../Context/ResourseData";
-// import { PanelContext } from "../../Context/PanelList";
+import env from "react-dotenv";
 
 export default function AllPanels() {
   const { setResourceData } = useContext(resourceDataContext);
-  // const { panelResources } = useContext(PanelContext);
 
   const [click, setClick] = useState(null);
 
-  const panelResources = ["Shelters", "Safe Injection", "Food Banks"];
+  const panelResources = ["Shelters", "Safe Injection Sites", "Food Banks"];
 
   const handleClick = (panel) => {
-    // e.preventDefault();
     setClick(panel);
   };
 
   const renderPanels = panelResources.map((panel) => {
     console.log("panel:", panel);
-    if (panel === "Safe Injection") {
-      panel = `${panel} Sites`;
-    }
+
     return (
       <button
         key={panel}
@@ -37,10 +33,11 @@ export default function AllPanels() {
   useEffect(() => {
     if (!click) return;
     console.log("click:", click);
-    const noSpace = click.split(" ").join("");
+    const noSpace = click.split(" ").join("").toLowerCase();
+    console.log("noSpace:", noSpace);
     console.log("hitALL");
     axios
-      .get(`http://localhost:5001/${noSpace}/all`)
+      .get(`https://my.api.mockaroo.com/${noSpace}.json?key=${env.API_KEY}`)
       .then((res) => {
         const incomingData = res.data;
         console.log("incomingDataFB:", incomingData);
