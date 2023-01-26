@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { resourceDataContext } from "../../Context/ResourseData";
+import { resourceDataContext } from "../../Context/ResourceData";
 import { PanelContext } from "../../Context/PanelList";
 import env from "react-dotenv";
 import "../Styles/Panels.css";
@@ -20,8 +20,6 @@ export default function AllPanels() {
 
   // ---- Render each panel button
   const renderPanels = panelResources.map((panel) => {
-    console.log("panel:", panel);
-
     return (
       <button
         key={panel}
@@ -38,15 +36,11 @@ export default function AllPanels() {
   // ---- Once panel is clicked axios call to API for map marker data
   useEffect(() => {
     if (!click) return;
-    console.log("click:", click);
     const noSpace = click.split(" ").join("").toLowerCase();
-    console.log("noSpace:", noSpace);
-    console.log("hitALL");
     axios
       .get(`https://my.api.mockaroo.com/${noSpace}.json?key=${env.API_KEY}`)
       .then((res) => {
         const incomingData = res.data;
-        console.log("incomingDataFB:", incomingData);
         setResourceData(incomingData);
       })
       .catch((err) => console.log(err));

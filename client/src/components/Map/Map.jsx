@@ -5,7 +5,7 @@ import "../Styles/Map.css";
 import { HereIcon } from "./HerePin";
 import Markers from "./Markers";
 import { useContext } from "react";
-import { resourceDataContext } from "../../Context/ResourseData";
+import { resourceDataContext } from "../../Context/ResourceData";
 
 export default function Map() {
   // --- set to dt Victora
