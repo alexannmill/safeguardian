@@ -63,9 +63,9 @@ export default function Markers(props) {
   return (
     <div>
       {renderMarkers}
-      {popUpType === 1 && <SheltersPopUp resource={resource} />}
-      {/* {popUpType === 2 && <HoursPopUp resource={resource} />}
-      {popUpType === 3 && <NoHoursPopUp resource={resource} />} */}
+      {/* {popUpType === 1 && <SheltersPopUp resource={resource} />} */}
+      {popUpType === 2 && <HoursPopUp resource={resource} />}
+      {/* {popUpType === 3 && <NoHoursPopUp resource={resource} />} */}
     </div>
   );
 }
