@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/safeguardian/static/css/main.e152ee58.css",
+    "main.js": "/safeguardian/static/js/main.b8812d40.js",
+    "static/media/you-are-here-icon.svg": "/safeguardian/static/media/you-are-here-icon.ddb1463695fc74190b4722b7bdb09ea1.svg",
+    "index.html": "/safeguardian/index.html",
+    "main.e152ee58.css.map": "/safeguardian/static/css/main.e152ee58.css.map",
+    "main.b8812d40.js.map": "/safeguardian/static/js/main.b8812d40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e152ee58.css",
+    "static/js/main.b8812d40.js"
+  ]
+}
