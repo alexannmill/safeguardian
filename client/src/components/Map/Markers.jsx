@@ -19,6 +19,7 @@ export default function Markers(props) {
 
   const [popUpType, setPopUpType] = useState(null);
 
+  // ---- Config Pop-up to match data sets
   useEffect(() => {
     // ---- Setting Popup with shelter format
     if (panel === "Shelters") setPopUpType(1);
@@ -37,6 +38,7 @@ export default function Markers(props) {
     }
   }, [panel]);
 
+  // ---- Marker icons for each facility
   const customIcon = new Icon({
     iconUrl: icon,
     iconSize: [40, 50],
@@ -44,11 +46,11 @@ export default function Markers(props) {
     popupAnchor: [-0, -76],
   });
 
-  // ---- Map each with resource data (pun intended)
+  // ---- Maps each marker for resource
   const renderMarkers = resourceData.map((resource) => {
     return (
       <Marker
-        key={resource.name}
+        key={`${resource.lat}${resource.facility}`}
         position={[Number(resource.lat), Number(resource.long)]}
         icon={customIcon}
         eventHandlers={{

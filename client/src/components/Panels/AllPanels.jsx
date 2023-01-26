@@ -7,15 +7,18 @@ import "../Styles/Panels.css";
 
 export default function AllPanels() {
   const { setResourceData } = useContext(resourceDataContext);
-  const { setPanel, panelResources, panel } = useContext(PanelContext);
+  const { setPanel, panelResources } = useContext(PanelContext);
 
   const [click, setClick] = useState(null);
 
+  // ---- Set local and global state for selected resources
+  // ---- Used panel state used for pop up config based on data
   const handleClick = (panel) => {
     setClick(panel);
     setPanel(panel);
   };
 
+  // ---- Render each panel button
   const renderPanels = panelResources.map((panel) => {
     console.log("panel:", panel);
 
@@ -32,6 +35,7 @@ export default function AllPanels() {
     );
   });
 
+  // ---- Once panel is clicked axios call to API for map marker data
   useEffect(() => {
     if (!click) return;
     console.log("click:", click);

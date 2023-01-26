@@ -1,16 +1,19 @@
 import { Popup } from "react-leaflet";
+import { useContext } from "react";
+import { resourceContext } from "../../Context/Resource";
 
-export default function NoHoursPopUp(props) {
-  // const { resource } = useContext(resourceContext);
+export default function NoHoursPopUp() {
+  const { resource } = useContext(resourceContext);
 
   return (
     <Popup
-      key={props.resource.facility}
-      position={[Number(props.resource.lat), Number(props.resource.long)]}
+      key={resource.facility}
+      position={[Number(resource.lat), Number(resource.long)]}
     >
-      <h6>Facility: {props.resource.facility}</h6>
-      <h6>Category: {props.resource.address}</h6>
-      <h6>Phone: {props.resource.phone}</h6>
+      <h6>Facility: {resource.facility}</h6>
+      <h6>Address: {resource.address}</h6>
+      <h6>Hours: {`${resource.open} to ${resource.close}`}</h6>
+      <h6>Phone: {resource.phone}</h6>
     </Popup>
   );
 }
