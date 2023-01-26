@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { resourceDataContext } from "../../Context/ResourceData";
 import { PanelContext } from "../../Context/PanelList";
-import env from "react-dotenv";
 import "../Styles/Panels.css";
 
 export default function AllPanels() {
@@ -37,6 +36,7 @@ export default function AllPanels() {
   useEffect(() => {
     if (!click) return;
     const noSpace = click.split(" ").join("").toLowerCase();
+    console.log("noSpace:", noSpace);
     axios
       .get(`https://my.api.mockaroo.com/${noSpace}.json?key=18232cb0`)
       .then((res) => {
