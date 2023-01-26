@@ -38,7 +38,7 @@ export default function AllPanels() {
     if (!click) return;
     const noSpace = click.split(" ").join("").toLowerCase();
     axios
-      .get(`https://my.api.mockaroo.com/${noSpace}.json?key=${env.API_KEY}`)
+      .get(`https://my.api.mockaroo.com/${noSpace}.json?key=18232cb0`)
       .then((res) => {
         const incomingData = res.data;
         setResourceData(incomingData);
