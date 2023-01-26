@@ -3,7 +3,7 @@ import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import { useContext, useState } from "react";
-import { resourceDataContext } from "../../Context/ResourseData";
+import { resourceDataContext } from "../../Context/ResourceData";
 import { resourceContext } from "../../Context/Resource";
 import { PanelContext } from "../../Context/PanelList";
 import SheltersPopUp from "./Shelters-Popup";
