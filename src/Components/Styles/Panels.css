@@ -1,4 +1,23 @@
 .all-panels {
   display: flex;
   flex-direction: column;
+  width: 20vw;
+}
+.all-panels button {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(243, 243, 243);
+  color: black;
+  font-size: medium;
+  font-weight: normal;
+}
+
+.call-emerg {
+  line-height: 0%;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(254, 96, 96);
+  width: 20vw;
+  height: 10vh;
+  font-size: 1rem;
+  padding: 0.4rem;
 }

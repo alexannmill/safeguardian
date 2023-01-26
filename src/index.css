@@ -10,47 +10,9 @@
     .App {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      
     }
-    
-    .logo-mid {
-      height: 100px;
-      margin: 20px;
-    }
-    
-    .logo-small {
-      height: 20px;
-      margin-bottom: 20px;
-    }
-    
-    .map-component {
+    .panel-map {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
     
-    .map {
-    height: 100vh;
-      width: 60vw;
-      margin: 30px;
-      border: 1px solid gray;
-      background-color: rgb(125, 193, 220);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      color: whitesmoke;
-      border-radius: 5px;
-}
-
-.leaflet-container {
-  width: 60vw;
-  height: 100vh;
-  border-radius: 5px;
-}
-
-.App {
-  display: flex;
-  flex-direction: row;
-}
-

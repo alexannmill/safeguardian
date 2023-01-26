@@ -1,0 +1,16 @@
+@import  "./variables";
+
+.emergency-banner {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-red;
+  border: 2px solid darkred;
+  font-size: large;
+  text-align: center;
+  padding: 0.5rem;
+
+  a {
+    color: black;
+    font-weight: 600;
+  }
+}

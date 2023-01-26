@@ -1,3 +1,4 @@
+import EmergencyBanner from "./Components/EmergencyBanner";
 import Map from "./Components/Map/Map";
 import Panels from "./Components/Panels";
 import PanelProvider from "./Context/PanelList";
@@ -10,8 +11,11 @@ function App() {
       <PanelProvider>
         <ResourceDataProvider>
           <ResourceProvider>
-            <Panels />
-            <Map />
+            <EmergencyBanner />
+            <div className="panel-map">
+              <Panels />
+              <Map />
+            </div>
           </ResourceProvider>
         </ResourceDataProvider>
       </PanelProvider>
