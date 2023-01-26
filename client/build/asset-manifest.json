@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e424b1ee.css",
+    "main.js": "/static/js/main.8cb2712e.js",
+    "static/media/you-are-here-icon.svg": "/static/media/you-are-here-icon.ddb1463695fc74190b4722b7bdb09ea1.svg",
+    "index.html": "/index.html",
+    "main.e424b1ee.css.map": "/static/css/main.e424b1ee.css.map",
+    "main.8cb2712e.js.map": "/static/js/main.8cb2712e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e424b1ee.css",
+    "static/js/main.8cb2712e.js"
+  ]
+}
