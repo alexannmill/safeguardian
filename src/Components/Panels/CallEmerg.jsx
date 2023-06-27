@@ -3,10 +3,9 @@ import { red } from '../constants';
 import { Phone } from '@material-ui/icons'
 const useStyles = makeStyles({
     emergBtn: {
-        fontFamily: "'Poppins', sans-serif'",
         backgroundColor: red,
         width: '10rem',
-        height: '10vh',
+        height: '4rem',
     },
 });
 export default function CallEmerg() {
@@ -20,6 +19,7 @@ export default function CallEmerg() {
     return (
         <Button
             key={'callEmerg'}
+            fullWidth
             className={classes.emergBtn}
             variant='contained'
             color='error'

@@ -12,6 +12,7 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        padding: '0px',
     },
 });
 export default function Map() {

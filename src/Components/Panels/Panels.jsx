@@ -7,6 +7,7 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        padding: '0px',
     },
 });
 function Panels() {

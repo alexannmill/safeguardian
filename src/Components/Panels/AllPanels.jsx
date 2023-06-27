@@ -5,8 +5,8 @@ import { PanelContext } from "../../Context/PanelList";
 import { Button, Container, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    allPanels: {
-        width: '10rem',
+    panels: {
+        width: 'clamp(10rem, 20vw)',
     },
 });
 
@@ -20,8 +20,8 @@ export default function AllPanels() {
     // ---- Once panel is clicked axios call to API for map marker data
     useEffect(() => {
         if (!click) return;
-        const noSpace = click.split(" ").join("").toLowerCase();
-        console.log("noSpace:", noSpace);
+        const noSpace = click.split(' ').join('').toLowerCase();
+        console.log('noSpace:', noSpace);
         axios
             .get(`https://my.api.mockaroo.com/${noSpace}.json?key=18232cb0`)
             .then((res) => {
@@ -45,7 +45,7 @@ export default function AllPanels() {
                 key={panel}
                 fullWidth
                 variant='contained'
-                className={classes.allPanels}
+                className={classes.panels}
                 onClick={(e) => {
                     handleClick(panel);
                 }}
