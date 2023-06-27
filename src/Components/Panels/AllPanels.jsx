@@ -5,46 +5,46 @@ import { PanelContext } from "../../Context/PanelList";
 import "../Styles/Panels.css";
 
 export default function AllPanels() {
-  const { setResourceData } = useContext(resourceDataContext);
-  const { setPanel, panelResources } = useContext(PanelContext);
+    const { setResourceData } = useContext(resourceDataContext);
+    const { setPanel, panelResources } = useContext(PanelContext);
 
-  const [click, setClick] = useState(null);
+    const [click, setClick] = useState(null);
+    useEffect(() => {
+        if (!click) return;
+        const noSpace = click.split(" ").join("").toLowerCase();
+        console.log("noSpace:", noSpace);
+        axios
+            .get(`https://my.api.mockaroo.com/${noSpace}.json?key=18232cb0`)
+            .then((res) => {
+                const incomingData = res.data;
+                setResourceData(incomingData);
+            })
+            .catch((err) => console.log(err));
+    }, [click, setResourceData]);
 
-  // ---- Set local and global state for selected resources
-  // ---- Used panel state used for pop up config based on data
-  const handleClick = (panel) => {
-    setClick(panel);
-    setPanel(panel);
-  };
+    // ---- Set local and global state for selected resources
+    // ---- Used panel state used for pop up config based on data
+    const handleClick = (panel) => {
+        setClick(panel);
+        setPanel(panel);
+    };
 
-  // ---- Render each panel button
-  const renderPanels = panelResources.map((panel) => {
-    return (
-      <button
-        key={panel}
-        className={panel}
-        onClick={(e) => {
-          handleClick(panel);
-        }}
-      >
-        <h3>{panel}</h3>
-      </button>
-    );
-  });
+    // ---- Render each panel button
+    const renderPanels = panelResources.map((panel) => {
+        return (
+            <button
+                key={panel}
+                className={panel}
+                onClick={(e) => {
+                    handleClick(panel);
+                }}
+            >
+                <h3>{panel}</h3>
+            </button>
+        );
+    });
 
-  // ---- Once panel is clicked axios call to API for map marker data
-  useEffect(() => {
-    if (!click) return;
-    const noSpace = click.split(" ").join("").toLowerCase();
-    console.log("noSpace:", noSpace);
-    axios
-      .get(`https://my.api.mockaroo.com/${noSpace}.json?key=18232cb0`)
-      .then((res) => {
-        const incomingData = res.data;
-        setResourceData(incomingData);
-      })
-      .catch((err) => console.log(err));
-  }, [click]);
+    // ---- Once panel is clicked axios call to API for map marker data
 
-  return <div className="all-panels">{renderPanels}</div>;
+    return <div className="all-panels">{renderPanels}</div>;
 }

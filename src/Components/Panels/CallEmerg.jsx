@@ -3,8 +3,9 @@ import "../Styles/Panels.css";
 export default function CallEmerg() {
 
   const handleClick = () => {
-    //will need to take location of kiosk
-    //call emerg
+      //TODO:
+      //will need to take location of kiosk
+      //call emerg - find package
   };
   return (
     <button
