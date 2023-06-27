@@ -2,13 +2,23 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { resourceDataContext } from "../../Context/ResourceData";
 import { PanelContext } from "../../Context/PanelList";
-import "../Styles/Panels.css";
+import { Button, Container, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+    allPanels: {
+        fontFamily: 'Poppins", sans-serif',
+        backgroundColor: "rgb(243, 243, 243)",
+    },
+});
 
 export default function AllPanels() {
+    const classes = useStyles();
+
     const { setResourceData } = useContext(resourceDataContext);
     const { setPanel, panelResources } = useContext(PanelContext);
-
     const [click, setClick] = useState(null);
+
+    // ---- Once panel is clicked axios call to API for map marker data
     useEffect(() => {
         if (!click) return;
         const noSpace = click.split(" ").join("").toLowerCase();
@@ -32,19 +42,19 @@ export default function AllPanels() {
     // ---- Render each panel button
     const renderPanels = panelResources.map((panel) => {
         return (
-            <button
+            <Button
                 key={panel}
-                className={panel}
+                fullWidth
+                variant="contained"
+                className={classes.allPanels}
                 onClick={(e) => {
                     handleClick(panel);
                 }}
             >
                 <h3>{panel}</h3>
-            </button>
+            </Button>
         );
     });
 
-    // ---- Once panel is clicked axios call to API for map marker data
-
-    return <div className="all-panels">{renderPanels}</div>;
+    return <Container>{renderPanels}</Container>;
 }
