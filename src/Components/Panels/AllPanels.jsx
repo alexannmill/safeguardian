@@ -2,12 +2,11 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { resourceDataContext } from "../../Context/ResourceData";
 import { PanelContext } from "../../Context/PanelList";
-import { Button, Container, makeStyles } from "@material-ui/core";
+import { Button, Container, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
     allPanels: {
-        fontFamily: 'Poppins", sans-serif',
-        backgroundColor: "rgb(243, 243, 243)",
+        width: '10rem',
     },
 });
 
@@ -45,13 +44,13 @@ export default function AllPanels() {
             <Button
                 key={panel}
                 fullWidth
-                variant="contained"
+                variant='contained'
                 className={classes.allPanels}
                 onClick={(e) => {
                     handleClick(panel);
                 }}
             >
-                <h3>{panel}</h3>
+                {panel}
             </Button>
         );
     });

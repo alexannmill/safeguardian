@@ -1,15 +1,12 @@
 import { Button, makeStyles } from "@material-ui/core";
-import "../Styles/Panels.css";
+import { red } from '../constants';
+import { Phone } from '@material-ui/icons'
 const useStyles = makeStyles({
     emergBtn: {
-        lineHeight: "0%",
-        display: "block",
-        fontFamily: 'Poppins", sans-serif',
-        backgroundColor: "rgb(254, 96, 96)",
-        width: "20vw",
-        height: "10vh",
-        fontSize: "1rem",
-        padding: "0.4rem",
+        fontFamily: "'Poppins', sans-serif'",
+        backgroundColor: red,
+        width: '10rem',
+        height: '10vh',
     },
 });
 export default function CallEmerg() {
@@ -22,14 +19,17 @@ export default function CallEmerg() {
     };
     return (
         <Button
-            key={"call-emerg"}
+            key={'callEmerg'}
             className={classes.emergBtn}
+            variant='contained'
+            color='error'
+            size='large'
             onClick={(e) => {
                 e.preventDefault();
                 handleClick();
             }}
         >
-            <h3>Call 911</h3>
+            <Phone /> {'Call 911'}
         </Button>
     );
 }

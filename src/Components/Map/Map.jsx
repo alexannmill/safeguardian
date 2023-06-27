@@ -1,17 +1,17 @@
 import { MapContainer, TileLayer, Marker, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "../Styles/Map.css";
-import { HereIcon } from "./HerePin";
-import Markers from "./Markers";
-import { useContext } from "react";
-import { resourceDataContext } from "../../Context/ResourceData";
-import { Container, makeStyles } from "@material-ui/core";
+import './Map.css'; // CSS file still needed for leaflet config (under the hood)
+import { HereIcon } from './HerePin';
+import Markers from './Markers';
+import { useContext } from 'react';
+import { resourceDataContext } from '../../Context/ResourceData';
+import { Container, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
     mapComponent: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
     },
 });
 export default function Map() {
