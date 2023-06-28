@@ -9,7 +9,7 @@ import EmergencyBanner from './EmergencyBanner';
 import Map from './Map/Map';
 import Panels from './Panels/Panels';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     panelMap: {
         display: 'flex',
     },
-});
+}));
 
 function Main() {
     const classes = useStyles();
@@ -27,10 +27,10 @@ function Main() {
             <Grid item xs={12}>
                 <EmergencyBanner />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={2}>
                 <Panels />
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10}>
                 <Map />
             </Grid>
         </Grid>

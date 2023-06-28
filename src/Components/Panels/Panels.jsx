@@ -13,8 +13,6 @@ const useStyles = makeStyles({
         padding: '0px',
     },
     panels: {
-        width: 'clamp(10rem, 10vw)',
-        height: '4rem',
         padding: '0px',
     },
 });
