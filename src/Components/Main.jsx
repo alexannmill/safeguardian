@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     panelMap: {
         display: 'flex',
+        borderRadius: '0px',
     },
 }));
 

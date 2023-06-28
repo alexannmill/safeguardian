@@ -1,4 +1,4 @@
-import { Link, makeStyles } from '@material-ui/core';
+import { Link, Typography, makeStyles } from '@material-ui/core';
 import { Alert } from '@mui/material';
 import { red } from './constants';
 import { useState } from 'react';
@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
         border: '2px solid red',
         textAlign: 'center',
         width: '100vw',
+        borderRadius: '0px',
+    },
+    alertFont: {
+        fontSize: '.7rem',
     },
 }));
 
@@ -23,16 +27,27 @@ function EmergencyBanner() {
             icon={false}
             severity={severity}
             className={classes.emergencyBanner}
+            style={{ borderRadius: '0px' }} // inline to override MUI
         >
-            This project is currently still in progress. If there is an issue or
-            have an idea to add please connect me through{' '}
-            <Link href='https://alexannmill.github.io/portfolio'>my site</Link>{' '}
-            in the contact me section. Once live this banner will act as an
-            emergency broadcasting. This will alert people of heat waves, cold
-            snaps, spike in overdoses and more.{' '}
-            <Link href='github.com/alexannmill/safeguardian'>
-                Checkout the code here
-            </Link>
+            <Typography className={classes.alertFont}>
+                This project is currently still in progress. If there is an
+                issue or have an idea to add please connect me through{' '}
+                <Link
+                    underline='always'
+                    href='https://alexannmill.github.io/portfolio'
+                >
+                    my site
+                </Link>{' '}
+                in the contact me section. Once live this banner will act as an
+                emergency broadcasting. This will alert people of heat waves,
+                cold snaps, spike in overdoses and more.{' '}
+                <Link
+                    underline='always'
+                    href='github.com/alexannmill/safeguardian'
+                >
+                    Checkout the code here
+                </Link>
+            </Typography>
         </Alert>
     );
 }

@@ -14,6 +14,8 @@ const useStyles = makeStyles({
     },
     panels: {
         padding: '0px',
+        border: '1px black solid',
+        borderRadius: '0px',
     },
 });
 function Panels() {
