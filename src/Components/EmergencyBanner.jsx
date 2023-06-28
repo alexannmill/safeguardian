@@ -1,6 +1,7 @@
 import { Link, makeStyles } from '@material-ui/core';
 import { Alert } from '@mui/material';
 import { red } from './constants';
+import { useState } from 'react';
 
 const useStyles = makeStyles({
     emergencyBanner: {
@@ -13,10 +14,12 @@ const useStyles = makeStyles({
     },
 });
 function EmergencyBanner() {
+    const [message, setMessage] = useState('');
+    const [severity, setSeverity] = useState('error');
     const classes = useStyles();
 
     return (
-        <Alert severity='error' className={classes.emergencyBanner}>
+        <Alert severity={severity} className={classes.emergencyBanner}>
             This project is currently still in progress. If there is an issue or
             have an idea to add please connect me through{' '}
             <Link href='https://alexannmill.github.io/portfolio'>my site</Link>{' '}

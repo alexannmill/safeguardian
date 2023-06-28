@@ -4,8 +4,9 @@ import { Phone } from '@material-ui/icons'
 const useStyles = makeStyles({
     emergBtn: {
         backgroundColor: red,
-        width: '10rem',
+        width: 'clamp(10rem, 10vw)',
         height: '4rem',
+        padding: '0px',
     },
 });
 export default function CallEmerg() {

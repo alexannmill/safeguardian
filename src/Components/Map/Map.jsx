@@ -9,10 +9,8 @@ import { Container, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
     mapComponent: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
         padding: '0px',
+        margin: '0px',
     },
 });
 export default function Map() {
