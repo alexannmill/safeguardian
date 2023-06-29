@@ -17,12 +17,15 @@ export default function Filter() {
     const classes = useStyles();
     const { resource } = useContext(resourceContext);
 
+    //resources data as json
+    //once key found compare value to selected property
     function filterJSON(jsonData, properties) {
         let filteredData = {};
 
         for (let key in jsonData) {
             if (properties.includes(key)) {
                 filteredData[key] = jsonData[key];
+                //handle nesting
             } else if (
                 typeof jsonData[key] === 'object' &&
                 jsonData[key] !== null
