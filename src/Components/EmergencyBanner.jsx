@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         width: '99vw',
         margin: '.25rem',
-        borderRadius: '3px',
     },
     alertFont: {
         fontSize: 'x-large',
@@ -28,7 +27,6 @@ function EmergencyBanner() {
             icon={false}
             severity={severity}
             className={classes.emergencyBanner}
-            style={{ borderRadius: '0px' }} // inline to override MUI
         >
             <Typography className={classes.alertFont}>
                 This project is currently still in progress. If there is an
