@@ -7,12 +7,12 @@ export default function PanelProvider(props) {
 
     // ---- Used in setting panel state allow with rendering panel buttons also need to match API EPs
     const panelResources = [
-        "Shelters",
-        "Safe Injection Sites",
-        "Food Banks",
-        "Detox Centres",
-        "Allowed Camping Areas",
-        "Hospitals",
+        'Shelters',
+        'Safe Injection Sites',
+        'Food Banks',
+        'Detox Centres',
+        'Camping Areas',
+        'Hospitals',
     ];
     const data = { setPanel, panel, panelResources };
 

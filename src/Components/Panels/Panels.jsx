@@ -2,7 +2,13 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { resourceDataContext } from '../../Context/ResourceData';
 import { PanelContext } from '../../Context/PanelList';
-import { Button, Container, makeStyles } from '@material-ui/core';
+import {
+    Button,
+    Container,
+    List,
+    ListItem,
+    makeStyles,
+} from '@material-ui/core';
 import CallEmerg from './CallEmerg';
 import { resourceContext } from '../../Context/Resource';
 
@@ -16,13 +22,14 @@ const useStyles = makeStyles({
     panels: {
         padding: '0px',
         border: '1px black solid',
-        borderRadius: '0px',
+        // borderRadius: '0px',
     },
     selectedPanel: {
         padding: '0px',
         border: '1px black solid',
-        borderRadius: '0px',
-        backgroundColor: 'darkgrey',
+        // borderRadius: '0px',
+        backgroundColor: 'black',
+        color: 'white',
     },
 });
 function Panels() {
@@ -56,24 +63,30 @@ function Panels() {
     };
     const renderPanels = panelResources.map((p) => {
         return (
-            <Button
-                key={p}
-                fullWidth
-                variant='contained'
-                className={p === panel ? classes.selectedPanel : classes.panels}
-                onClick={(e) => {
-                    handleClick(p);
-                }}
-            >
-                {p}
-            </Button>
+            <ListItem>
+                <Button
+                    key={p}
+                    fullWidth
+                    variant='contained'
+                    className={
+                        p === panel ? classes.selectedPanel : classes.panels
+                    }
+                    onClick={(e) => {
+                        handleClick(p);
+                    }}
+                >
+                    {p}
+                </Button>
+            </ListItem>
         );
     });
     return (
-        <Container className={classes.panelList}>
+        <List className={classes.panelList}>
             {renderPanels}
-            <CallEmerg />
-        </Container>
+            <ListItem>
+                <CallEmerg />
+            </ListItem>
+        </List>
     );
 }
 

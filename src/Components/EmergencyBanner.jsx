@@ -8,11 +8,12 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         border: '2px solid red',
         textAlign: 'center',
-        width: '100vw',
-        borderRadius: '0px',
+        width: '99vw',
+        margin: '.25rem',
+        borderRadius: '3px',
     },
     alertFont: {
-        fontSize: 'large',
+        fontSize: 'x-large',
     },
 }));
 

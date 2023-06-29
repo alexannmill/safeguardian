@@ -5,7 +5,7 @@ const useStyles = makeStyles({
         width: 'clamp(10rem, 10vw)',
         height: '4rem',
         padding: '0px',
-        borderRadius: '0px',
+        // borderRadius: '0px',
         border: '1px black solid',
     },
 });
