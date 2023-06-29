@@ -12,8 +12,6 @@ export default function NoHoursPopUp() {
       >
           <h3>{resource.facility}</h3>
           <h6>Address: {resource.address}</h6>
-          <h6>Hours: {`${resource.open} to ${resource.close}`}</h6>
-          <h6>Phone: {resource.phone}</h6>
       </Popup>
   );
 }

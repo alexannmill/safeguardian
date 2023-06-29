@@ -42,8 +42,8 @@ export default function Markers(props) {
     const customIcon = new Icon({
         iconUrl: icon,
         iconSize: [30, 40],
-        iconAnchor: [1, 1],
-        popupAnchor: [-0, -76],
+        iconAnchor: [15, 0],
+        popupAnchor: [0, 0],
         className: 'icons',
     });
 

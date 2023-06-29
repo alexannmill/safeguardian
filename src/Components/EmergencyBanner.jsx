@@ -1,6 +1,5 @@
 import { Link, Typography, makeStyles } from '@material-ui/core';
 import { Alert } from '@mui/material';
-import { red } from './constants';
 import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,15 +12,16 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '0px',
     },
     alertFont: {
-        fontSize: '.7rem',
+        fontSize: 'large',
     },
 }));
+
+//TODO: change to overflow scroll
 
 function EmergencyBanner() {
     const [message, setMessage] = useState('');
     const [severity, setSeverity] = useState('error');
     const classes = useStyles();
-
     return (
         <Alert
             icon={false}

@@ -1,6 +1,5 @@
-import { Button, makeStyles } from "@material-ui/core";
-import { red } from '../constants';
-import { Phone } from '@material-ui/icons'
+import { Button, makeStyles } from '@material-ui/core';
+import { Phone } from '@material-ui/icons';
 const useStyles = makeStyles({
     emergBtn: {
         width: 'clamp(10rem, 10vw)',

@@ -4,9 +4,10 @@ import { resourceContext } from '../../Context/Resource';
 
 export default function SheltersPopUp() {
     const { resource } = useContext(resourceContext);
-
+    // const popupOffset = [0, 50];
     return (
         <Popup
+            // offset={popupOffset}
             key={resource.facility}
             position={[Number(resource.lat), Number(resource.long)]}
         >
