@@ -1,6 +1,5 @@
 import { Link, Typography, makeStyles } from '@material-ui/core';
 import { Alert } from '@mui/material';
-import { red } from './constants';
 import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,25 +8,25 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         border: '2px solid red',
         textAlign: 'center',
-        width: '100vw',
-        borderRadius: '0px',
+        width: '99vw',
+        margin: '.25rem',
     },
     alertFont: {
-        fontSize: '.7rem',
+        fontSize: 'x-large',
     },
 }));
+
+//TODO: change to overflow scroll
 
 function EmergencyBanner() {
     const [message, setMessage] = useState('');
     const [severity, setSeverity] = useState('error');
     const classes = useStyles();
-
     return (
         <Alert
             icon={false}
             severity={severity}
             className={classes.emergencyBanner}
-            style={{ borderRadius: '0px' }} // inline to override MUI
         >
             <Typography className={classes.alertFont}>
                 This project is currently still in progress. If there is an

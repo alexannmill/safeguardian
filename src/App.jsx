@@ -22,6 +22,11 @@ const theme = createTheme({
             main: '#e5273b',
         },
     },
+    typography: {
+        h6: {
+            fontSize: '.7rem',
+        },
+    },
 });
 function App() {
     return (
