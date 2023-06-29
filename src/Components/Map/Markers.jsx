@@ -10,9 +10,15 @@ import SheltersPopUp from "./Shelters-Popup";
 import HoursPopUp from "./Hours-Popup";
 import NoHoursPopUp from "./NoHours-Popup";
 import { useEffect } from "react";
+import { makeStyles } from '@material-ui/core';
 
-// ---- props: position
-export default function Markers(props) {
+const useStyles = makeStyles({
+    popUp: {},
+    header: {},
+});
+
+export default function Markers() {
+    const classes = useStyles();
     const { resource, setResource } = useContext(resourceContext);
     const { resourceData } = useContext(resourceDataContext);
     const { panel } = useContext(PanelContext);
@@ -67,11 +73,13 @@ export default function Markers(props) {
         <div>
             {renderMarkers}
             {resource && popUpType === 1 && (
-                <SheltersPopUp resource={resource} />
+                <SheltersPopUp classes={classes} resource={resource} />
             )}
-            {resource && popUpType === 2 && <HoursPopUp resource={resource} />}
+            {resource && popUpType === 2 && (
+                <HoursPopUp classes={classes} resource={resource} />
+            )}
             {resource && popUpType === 3 && (
-                <NoHoursPopUp resource={resource} />
+                <NoHoursPopUp classes={classes} resource={resource} />
             )}
         </div>
     );

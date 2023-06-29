@@ -4,6 +4,7 @@ import { resourceDataContext } from '../../Context/ResourceData';
 import { PanelContext } from '../../Context/PanelList';
 import { Button, Container, makeStyles } from '@material-ui/core';
 import CallEmerg from './CallEmerg';
+import { resourceContext } from '../../Context/Resource';
 
 const useStyles = makeStyles({
     panelList: {
@@ -29,7 +30,7 @@ function Panels() {
 
     const { setResourceData } = useContext(resourceDataContext);
     const { setPanel, panelResources, panel } = useContext(PanelContext);
-
+    const { setResource } = useContext(resourceContext);
     // ---- Once panel is clicked axios call to API for map marker data
     useEffect(() => {
         if (!panel) return;
@@ -48,6 +49,11 @@ function Panels() {
     // ---- Used panel state used for pop up config based on data
     console.log('panel:', panel);
     // ---- Render each panel button
+
+    const handleClick = (p) => {
+        setResource(null);
+        setPanel(p);
+    };
     const renderPanels = panelResources.map((p) => {
         return (
             <Button
@@ -56,7 +62,7 @@ function Panels() {
                 variant='contained'
                 className={p === panel ? classes.selectedPanel : classes.panels}
                 onClick={(e) => {
-                    setPanel(p);
+                    handleClick(p);
                 }}
             >
                 {p}
