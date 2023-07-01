@@ -11,7 +11,7 @@ export default function PanelProvider(props) {
         'Safe Injection Sites',
         'Food Banks',
         'Detox Centres',
-        'Camping Areas',
+        'Allowed Camping Areas',
         'Hospitals',
     ];
     const data = { setPanel, panel, panelResources };
