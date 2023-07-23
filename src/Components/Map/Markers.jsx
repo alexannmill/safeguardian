@@ -2,8 +2,7 @@ import { Marker } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
-import { useContext, useState } from "react";
-import { resourceDataContext } from "../../Context/ResourceData";
+import { useContext, useState } from 'react';
 import { resourceContext } from "../../Context/Resource";
 import { PanelContext } from "../../Context/PanelList";
 import SheltersPopUp from "./Shelters-Popup";
@@ -19,8 +18,7 @@ const useStyles = makeStyles({
 
 export default function Markers() {
     const classes = useStyles();
-    const { resource, setResource } = useContext(resourceContext);
-    const { resourceData } = useContext(resourceDataContext);
+    const { resource, setResource, resourceData } = useContext(resourceContext);
     const { panel } = useContext(PanelContext);
 
     const [popUpType, setPopUpType] = useState(null);
